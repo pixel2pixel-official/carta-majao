@@ -41,18 +41,6 @@ window.CARTA = {
       t: { es: 'Comida', en: 'Food', fr: 'Cuisine', de: 'Speisen' },
       secciones: [
         {
-          id: 'sugerencias',
-          t: { es: 'Sugerencias', en: 'Chef’s suggestions', fr: 'Suggestions', de: 'Empfehlungen' },
-          destacada: true,
-          items: [
-            {
-              n: { es: 'Ostras francesas Peter Pan (3 uds.)', en: 'Peter Pan French oysters (3 pcs.)', fr: 'Huîtres françaises Peter Pan (3 pièces)', de: 'Französische Austern Peter Pan (3 Stück)' },
-              d: { es: 'Con aliño de manzana Granny Smith o de chalota', en: 'With Granny Smith apple or shallot dressing', fr: 'Assaisonnement pomme Granny Smith ou échalote', de: 'Mit Dressing aus Granny-Smith-Apfel oder Schalotte' },
-              precio: 11
-            }
-          ]
-        },
-        {
           id: 'entrantes',
           t: { es: 'Entrantes', en: 'Starters', fr: 'Entrées', de: 'Vorspeisen' },
           items: [
@@ -74,6 +62,10 @@ window.CARTA = {
               n: { es: 'Brioche con anchoa del Cantábrico', en: 'Brioche with Cantabrian anchovy', fr: 'Brioche à l’anchois de Cantabrie', de: 'Brioche mit kantabrischer Sardelle' },
               d: { es: 'Mantequilla, nuez y lima', en: 'Butter, walnut and lime', fr: 'Beurre, noix et citron vert', de: 'Butter, Walnuss und Limette' },
               precio: 4
+            },
+            {
+              n: { es: 'Ostras nº 2', en: 'No. 2 oysters', fr: 'Huîtres nº 2', de: 'Austern Nr. 2' },
+              precio: 5.5, ud: true
             },
             {
               n: { es: 'Ensaladilla de La Pepi', en: 'La Pepi’s Russian salad', fr: 'Salade russe de La Pepi', de: 'Russischer Salat nach La Pepi' },
@@ -235,16 +227,16 @@ window.CARTA = {
         {
           id: 'arroces',
           t: { es: 'Arroces melosos', en: 'Creamy rice dishes', fr: 'Riz crémeux', de: 'Cremige Reisgerichte' },
-          nota: { es: 'Para compartir', en: 'To share', fr: 'À partager', de: 'Zum Teilen' },
+          nota: { es: 'Para compartir · mín. 2 personas', en: 'To share · min. 2 people', fr: 'À partager · min. 2 personnes', de: 'Zum Teilen · mind. 2 Personen' },
           items: [
             {
               n: { es: 'Arroz del senyoret', en: 'Arroz del senyoret', fr: 'Arroz del senyoret', de: 'Arroz del senyoret' },
               d: { es: '', en: 'Seafood rice, all peeled', fr: 'Riz aux fruits de mer décortiqués', de: 'Reis mit geschälten Meeresfrüchten' },
-              precio: 32
+              precio: 18
             },
             {
               n: { es: 'Arroz de pluma ibérica', en: 'Iberian pork pluma rice', fr: 'Riz à la pluma ibérique', de: 'Reis mit iberischer Pluma' },
-              precio: 30
+              precio: 15
             }
           ]
         },
