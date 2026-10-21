@@ -1,0 +1,29 @@
+CARTA DIGITAL MAJAO BARRA
+=========================
+
+Instalación
+1. Sube esta carpeta completa (index.html, carta.js, fonts/ e img/) al hosting,
+   por ejemplo dentro de /carta/  →  https://grupomajao.com/carta/
+2. Listo. No necesita base de datos, WordPress ni ningún plugin.
+
+Enlaces directos
+- Comida (por defecto):  /carta/
+- Postres:   /carta/#postres
+- Bebidas:   /carta/#bebidas
+- Cervezas:  /carta/#cervezas
+- Vinos:     /carta/#vinos
+- Forzar idioma: /carta/?lang=en  (es, en, fr, de)
+- Menú de día:  /carta/#menu-dia
+- Menú de noche: /carta/#menu-noche
+
+Cambiar platos o precios
+- Edita solo carta.js con cualquier editor de texto (o el editor de archivos del hosting).
+- Los precios con decimales se escriben con punto: 6.5 → se muestra "6,50 €".
+- Media ración:   media: 4.5, racion: 6.5
+- Por unidad:     precio: 3, ud: true
+- Copa/botella:   formatos: [{ f: 'copa', p: 4 }, { f: 'botella', p: 16 }]
+- Tras guardar, si el móvil muestra la versión antigua, recarga la página.
+
+Botón de reseñas de Google
+- En carta.js → info.resenas, pega el enlace "Escribir una reseña" de la ficha de Google
+  y aparecerá el botón en el pie.

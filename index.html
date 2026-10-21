@@ -1,0 +1,638 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<meta name="theme-color" content="#3d4d20">
+<meta name="description" content="Carta de Majao Barra, Alicante: entrantes, arroces, carnes, pescados, postres, bebidas y vinos.">
+<title>Carta · Majao Barra</title>
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/barlow-condensed-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/barlow-latin-500-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face { font-family: "Barlow Condensed"; font-weight: 600; font-display: swap; src: url(fonts/barlow-condensed-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Barlow Condensed"; font-weight: 700; font-display: swap; src: url(fonts/barlow-condensed-latin-700-normal.woff2) format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 400; font-display: swap; src: url(fonts/barlow-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 400; font-style: italic; font-display: swap; src: url(fonts/barlow-latin-400-italic.woff2) format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 500; font-display: swap; src: url(fonts/barlow-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 600; font-display: swap; src: url(fonts/barlow-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Barlow"; font-weight: 700; font-display: swap; src: url(fonts/barlow-latin-700-normal.woff2) format("woff2"); }
+
+:root {
+  --olive: #556b2f; --olive-dk: #3d4d20; --olive-lt: #7d9a4a;
+  --cream: #f6f1e4; --cream-dk: #ece4cc; --mustard: #d4a53c; --mustard-dk: #9a7420;
+  --ink: #1f2418; --muted: #636856; --soft: #8a8e7e; --line: #e8e4d8; --paper: #ffffff;
+  --display: "Barlow Condensed", "Arial Narrow", Arial, sans-serif;
+  --text: "Barlow", Arial, "Helvetica Neue", Helvetica, sans-serif;
+  --tabs-h: 52px; --chips-h: 58px; --stick: calc(var(--tabs-h) + var(--chips-h));
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-padding-top: calc(var(--stick) + 12px); }
+body { margin: 0; background: var(--olive-dk); color: var(--ink); font-family: var(--text); font-size: 16px; line-height: 1.4; -webkit-font-smoothing: antialiased; -webkit-tap-highlight-color: transparent; }
+button { font: inherit; color: inherit; background: none; border: 0; padding: 0; cursor: pointer; }
+a { color: inherit; }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+:focus-visible { outline: 3px solid var(--mustard); outline-offset: 2px; border-radius: 6px; }
+
+/* ---------- Cabecera ---------- */
+.hero { position: relative; overflow: hidden; text-align: center; color: var(--cream);
+  background: linear-gradient(160deg, var(--olive) 0%, var(--olive-dk) 100%);
+  padding: calc(56px + env(safe-area-inset-top)) 20px 26px; }
+.hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .06;
+  background: repeating-linear-gradient(-45deg, var(--cream) 0 1px, transparent 1px 14px); }
+.hero > * { position: relative; z-index: 1; }
+.logo { display: block; width: clamp(150px, 44vw, 230px); height: auto; margin: 0 auto; }
+.brand { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; column-gap: 10px; max-width: 560px; margin: 0 auto; }
+.brand .logo { width: clamp(132px, 40vw, 230px); }
+.brand > .slot { display: flex; justify-content: center; min-width: 0; }
+.tagline { margin: 14px auto 0; max-width: 22rem; font-style: italic; font-size: 15px; line-height: 1.45; opacity: .82; }
+.topbar { position: absolute; z-index: 2; top: calc(10px + env(safe-area-inset-top)); left: max(10px, env(safe-area-inset-left)); right: max(10px, env(safe-area-inset-right));
+  display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+/* Botones circulares Menú de día / Menú de noche */
+.mbtn { position: relative; width: clamp(72px, 21vw, 104px); aspect-ratio: 1; max-width: 100%; border-radius: 50%;
+  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; padding: 8px;
+  background: rgba(0,0,0,.22); border: 2px solid rgba(246,241,228,.6); color: var(--cream);
+  box-shadow: 0 6px 16px -8px rgba(0,0,0,.55), inset 0 1px 0 rgba(246,241,228,.12);
+  font-family: var(--display); font-weight: 700; font-size: clamp(12px, 3.4vw, 15px); line-height: 1.02; letter-spacing: .05em;
+  text-transform: uppercase; text-align: center; text-wrap: balance; transition: background .2s, color .2s, transform .15s; }
+.mbtn::after { content: ""; position: absolute; inset: -6px; border-radius: 50%; border: 2px solid var(--mustard); opacity: 0; pointer-events: none;
+  animation: mring 2.8s ease-out infinite; }
+.mbtn.noche::after { animation-delay: 1.4s; }
+@keyframes mring { 0% { transform: scale(.94); opacity: .75; } 70%, 100% { transform: scale(1.12); opacity: 0; } }
+.mbtn svg { width: clamp(17px, 5vw, 22px); height: clamp(17px, 5vw, 22px); flex: none; color: var(--mustard); }
+.mbtn:hover, .mbtn:active { background: var(--cream); color: var(--olive-dk); }
+.mbtn:active { transform: scale(.96); }
+.mbtn span { max-width: 4.2em; }
+.lang { position: relative; flex: none; display: inline-flex; align-items: center; }
+.lang select { appearance: none; -webkit-appearance: none; height: 36px; padding: 0 26px 0 12px; border-radius: 999px; border: 0; cursor: pointer;
+  background: rgba(0,0,0,.2); color: var(--cream); font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: .06em; }
+.lang select option { color: var(--ink); background: #fff; }
+.lang svg { position: absolute; right: 9px; width: 12px; height: 12px; color: var(--cream); pointer-events: none; }
+
+/* ---------- Menús de día y noche (hoja a pantalla completa) ---------- */
+html.locked, html.locked body { overflow: hidden; }
+.sheet[hidden], [hidden] { display: none !important; }
+.sheet { position: fixed; inset: 0; z-index: 100; display: flex; justify-content: center; background: rgba(20,26,12,.55); }
+.sheet-panel { position: relative; width: 100%; max-width: 640px; height: 100%; background: var(--paper); overflow: hidden;
+  display: flex; flex-direction: column; animation: sheet-in .32s cubic-bezier(.2,.8,.2,1) both; }
+@keyframes sheet-in { from { transform: translateY(24px); opacity: 0; } to { transform: none; opacity: 1; } }
+.sheet-scroll { flex: 1; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; }
+.sheet-close { position: absolute; z-index: 3; top: calc(12px + env(safe-area-inset-top)); right: max(12px, env(safe-area-inset-right));
+  width: 44px; height: 44px; border-radius: 50%; display: grid; place-items: center; background: var(--cream); color: var(--olive-dk); box-shadow: 0 4px 14px -6px rgba(0,0,0,.45); }
+.sheet-close svg { width: 22px; height: 22px; }
+.m-hero { position: relative; overflow: hidden; color: var(--cream); background: linear-gradient(160deg, var(--olive) 0%, var(--olive-dk) 100%);
+  padding: calc(64px + env(safe-area-inset-top)) max(20px, env(safe-area-inset-right)) 28px max(20px, env(safe-area-inset-left)); }
+.m-hero.night { background: linear-gradient(165deg, #3d4d20 0%, #222b13 100%); }
+.m-hero::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .06;
+  background: repeating-linear-gradient(-45deg, var(--cream) 0 1px, transparent 1px 14px); }
+.m-hero > * { position: relative; z-index: 1; }
+.m-kicker { display: inline-flex; align-items: center; gap: 8px; font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: var(--mustard); }
+.m-kicker svg { width: 18px; height: 18px; }
+.m-lema { margin: 10px 0 0; font-style: italic; font-size: 19px; opacity: .9; }
+.m-title { margin: 6px 0 0; font-family: var(--display); font-weight: 700; font-size: clamp(46px, 14vw, 72px); line-height: .92; text-transform: uppercase; letter-spacing: .005em; text-wrap: balance; }
+.m-when { margin: 10px 0 0; font-family: var(--display); font-weight: 600; font-size: 22px; letter-spacing: .03em; }
+.m-buy { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin-top: 22px; }
+.m-price { display: inline-flex; flex-direction: column; align-items: flex-start; padding: 8px 16px 10px; border-radius: 14px; background: var(--cream); border: 2px solid var(--mustard); color: var(--olive-dk); }
+.m-price .l { font-family: var(--display); font-weight: 700; font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--olive); }
+.m-price .v { font-weight: 700; font-size: 40px; line-height: 1; font-variant-numeric: tabular-nums; }
+.m-price .v .eur { color: var(--olive); }
+.m-chips { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; }
+.m-chip { display: inline-flex; align-items: center; gap: 7px; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(246,241,228,.4); font-size: 14.5px; font-weight: 600; }
+.m-chip::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--mustard); flex: none; }
+.m-body { padding: 4px max(16px, env(safe-area-inset-right)) 8px max(16px, env(safe-area-inset-left)); }
+.m-body .sec { padding-top: 24px; scroll-margin-top: 0; }
+.m-body .sec + .sec { padding-top: 28px; }
+.m-body .sec-title { font-size: clamp(26px, 7.4vw, 32px); }
+.m-list { list-style: none; margin: 6px 0 0; padding: 0; }
+.m-list > li { padding: 13px 0; border-bottom: 1px dashed var(--line); font-size: 17px; line-height: 1.35; }
+.m-list > li:last-child { border-bottom: 0; }
+.m-n { font-weight: 600; color: var(--ink); }
+.m-d { color: var(--muted); }
+.m-or { display: flex; align-items: center; gap: 10px; margin: 6px 0; font-family: var(--text); font-style: italic; font-weight: 500; font-size: 16px; color: var(--mustard-dk); }
+.m-or::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+.m-fichas { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+.m-fichas span { padding: 8px 14px; border-radius: 12px; background: var(--cream); border: 1px solid var(--cream-dk); font-weight: 600; font-size: 15.5px; color: var(--olive-dk); }
+.m-pie { margin-top: 12px; padding: 12px 14px; border-radius: 12px; background: var(--cream); color: var(--olive-dk); font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.m-pie::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: var(--mustard); flex: none; }
+.m-foot { padding: 22px max(16px, env(safe-area-inset-right)) calc(28px + env(safe-area-inset-bottom)) max(16px, env(safe-area-inset-left)); }
+.m-notes { font-size: 13.5px; color: var(--muted); line-height: 1.5; border-top: 1px solid var(--line); padding-top: 16px; }
+.m-notes p { margin: 0 0 6px; }
+.m-back { margin-top: 16px; width: 100%; min-height: 52px; border-radius: 14px; background: var(--olive); color: var(--cream);
+  font-family: var(--display); font-weight: 600; font-size: 17px; letter-spacing: .06em; text-transform: uppercase; }
+@media (min-width: 720px) {
+  .sheet { padding: 24px; }
+  .sheet-panel { border-radius: 22px; box-shadow: 0 30px 60px -20px rgba(0,0,0,.5); }
+}
+@media (max-width: 374px) {
+  .lang select { padding: 0 22px 0 9px; font-size: 13px; }
+  .lang svg { right: 7px; }
+}
+
+/* ---------- Pestañas (menú superior) ---------- */
+.tabs { position: sticky; top: 0; z-index: 30; background: var(--olive-dk); box-shadow: 0 1px 0 rgba(0,0,0,.15); }
+.tabs-in { display: flex; max-width: 760px; margin: 0 auto; height: var(--tabs-h); padding: 0 max(4px, env(safe-area-inset-left)); }
+.tab { flex: 1 1 0; min-width: 0; position: relative; display: flex; align-items: center; justify-content: center;
+  font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: .05em; text-transform: uppercase;
+  color: rgba(246,241,228,.66); white-space: nowrap; transition: color .2s; }
+.tab::after { content: ""; position: absolute; left: 18%; right: 18%; bottom: 0; height: 3px; border-radius: 3px 3px 0 0; background: var(--mustard); transform: scaleX(0); transition: transform .25s ease; }
+.tab[aria-current="page"] { color: var(--cream); }
+.tab[aria-current="page"]::after { transform: scaleX(1); }
+
+/* ---------- Barra de secciones ---------- */
+.chips { position: sticky; top: var(--tabs-h); z-index: 29; background: var(--paper); border-bottom: 1px solid var(--line); }
+.chips.stuck { box-shadow: 0 6px 14px -10px rgba(31,36,24,.35); }
+.chips-in { display: flex; gap: 8px; max-width: 760px; margin: 0 auto; height: var(--chips-h); align-items: center;
+  overflow-x: auto; overscroll-behavior-x: contain; scrollbar-width: none; padding: 0 16px; scroll-padding: 0 16px;
+  -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 28px), transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0, #000 14px, #000 calc(100% - 28px), transparent 100%); }
+.chips-in::-webkit-scrollbar { display: none; }
+.chip { flex: none; height: 38px; padding: 0 15px; border-radius: 999px; border: 1.5px solid var(--olive); color: var(--olive-dk);
+  font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: .05em; text-transform: uppercase; white-space: nowrap; transition: background .2s, color .2s; }
+.chip[aria-current="true"] { background: var(--olive); color: var(--cream); }
+.chips-in::after { content: ""; flex: none; width: 12px; }
+
+/* ---------- Carta ---------- */
+.paper { background: var(--paper); }
+main { max-width: 760px; margin: 0 auto; padding: 8px 16px 48px; min-height: 60vh; }
+.sec { padding-top: 28px; scroll-margin-top: calc(var(--stick) + 10px); }
+.sec + .sec { padding-top: 40px; }
+.sec-head { position: relative; overflow: hidden; border-radius: 16px; background: var(--cream); padding: 18px 18px 16px 20px; }
+.sec-head::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 5px; background: var(--olive); }
+.sec-num { display: block; font-family: var(--display); font-weight: 600; font-size: 14px; letter-spacing: .14em; color: var(--mustard-dk); }
+.sec-title { margin: 2px 0 0; font-family: var(--display); font-weight: 700; font-size: clamp(30px, 8.6vw, 40px); line-height: 1; letter-spacing: .01em; text-transform: uppercase; color: var(--olive-dk); }
+.sec-note { display: inline-flex; align-items: center; gap: 6px; margin: 10px 0 0; padding: 4px 10px; border-radius: 999px; background: var(--paper); color: var(--olive-dk); font-size: 13.5px; font-weight: 600; }
+.sec-note::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--mustard); }
+.sec.featured .sec-head { background: var(--olive); }
+.sec.featured .sec-head::before { background: var(--mustard); }
+.sec.featured .sec-title { color: var(--cream); }
+.sec.featured .sec-num { color: var(--mustard); }
+.sec.featured .items { border: 1.5px solid var(--cream-dk); border-top: 0; border-radius: 0 0 16px 16px; padding: 0 14px; margin-top: -10px; padding-top: 10px; }
+
+.group { margin: 22px 0 0; display: flex; align-items: center; gap: 10px; font-family: var(--display); font-weight: 600; font-size: 15px; letter-spacing: .12em; text-transform: uppercase; color: var(--mustard-dk); }
+.group::after { content: ""; flex: 1; height: 1px; background: var(--line); }
+
+.items { list-style: none; margin: 4px 0 0; padding: 0; }
+.item { display: grid; grid-template-columns: minmax(0, 1fr) auto; column-gap: 14px; padding: 15px 0; border-bottom: 1px dashed var(--line); }
+.item:last-child { border-bottom: 0; }
+.i-name { margin: 0; font-family: var(--text); font-weight: 600; font-size: 17px; line-height: 1.25; color: var(--ink); overflow-wrap: break-word; hyphens: auto; }
+.i-desc { margin: 4px 0 0; font-size: 14.5px; line-height: 1.4; color: var(--muted); }
+.tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.tag { display: inline-flex; align-items: center; min-height: 26px; padding: 2px 10px; border-radius: 999px; border: 1px solid var(--cream-dk); background: var(--cream); color: var(--olive-dk); font-size: 13px; font-weight: 600; text-decoration: none; }
+a.tag::after { content: "↓"; margin-left: 5px; color: var(--mustard-dk); }
+.sup { margin-top: 8px; font-size: 13.5px; color: var(--muted); }
+.sup b { font-weight: 600; color: var(--ink); }
+.sup ul { list-style: none; margin: 4px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px; }
+.sup li { padding: 3px 9px; border-radius: 8px; background: var(--cream); white-space: nowrap; }
+.sup li span { font-weight: 700; color: var(--olive-dk); }
+
+.vars { grid-column: 1 / -1; list-style: none; margin: 10px 0 0; padding: 0; display: grid; gap: 2px; }
+.vars li { display: flex; align-items: baseline; gap: 8px; padding: 6px 0; font-size: 15.5px; }
+.vars li::after { content: ""; order: 1; flex: 1; border-bottom: 1.5px dotted var(--cream-dk); transform: translateY(-4px); }
+.vars .v-n { order: 0; }
+.vars .v-p { order: 2; font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.vars .v-p small { font-weight: 500; color: var(--soft); font-size: 12px; }
+
+/* Precios */
+.price { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; padding-top: 1px; }
+.p1 { font-weight: 700; font-size: 18px; color: var(--ink); }
+.p1 small, .eur { font-weight: 500; font-size: .78em; color: var(--muted); }
+.p1 .ud { display: block; font-size: 12px; font-weight: 500; color: var(--soft); margin-top: 1px; }
+.pm { display: flex; flex-direction: column; align-items: flex-end; gap: 6px; }
+.pm-media { display: flex; flex-direction: column; align-items: flex-end; min-width: 86px; padding: 5px 10px 6px; border-radius: 10px; background: var(--cream); border: 1.5px solid var(--olive); }
+.pm-media .l { font-family: var(--display); font-weight: 700; font-size: 12px; letter-spacing: .12em; text-transform: uppercase; color: var(--olive); line-height: 1.1; }
+.pm-media .v { font-weight: 700; font-size: 23px; line-height: 1.1; color: var(--olive-dk); }
+.pm-media .v .eur { color: var(--olive); }
+.pm-rac { font-size: 14px; color: var(--muted); }
+.pm-rac .l { font-family: var(--display); font-weight: 600; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; margin-right: 5px; color: var(--soft); }
+.pm-rac .v { font-weight: 600; }
+.pf { display: grid; grid-template-columns: auto auto; column-gap: 9px; row-gap: 3px; align-items: baseline; justify-content: end; }
+.pf .l { font-family: var(--display); font-weight: 600; font-size: 12.5px; letter-spacing: .09em; text-transform: uppercase; color: var(--soft); text-align: right; }
+.pf .v { font-weight: 700; font-size: 16.5px; color: var(--ink); text-align: right; }
+
+.empty { padding: 40px 0; text-align: center; color: var(--muted); }
+
+/* ---------- Pie ---------- */
+footer { position: relative; overflow: hidden; color: var(--cream); text-align: center;
+  background: linear-gradient(200deg, var(--olive) 0%, var(--olive-dk) 100%);
+  padding: 40px 20px calc(32px + env(safe-area-inset-bottom)); }
+footer::after { content: ""; position: absolute; inset: 0; pointer-events: none; opacity: .06;
+  background: repeating-linear-gradient(-45deg, var(--cream) 0 1px, transparent 1px 14px); }
+footer > * { position: relative; z-index: 1; }
+.f-in { max-width: 520px; margin: 0 auto; }
+footer .logo { width: 150px; }
+.actions { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin: 26px 0 0; }
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; min-height: 50px; padding: 0 12px; border-radius: 14px;
+  border: 1.5px solid rgba(246,241,228,.45); color: var(--cream); text-decoration: none; font-family: var(--display); font-weight: 600; font-size: 16px; letter-spacing: .06em; text-transform: uppercase; }
+.btn.main { background: var(--cream); color: var(--olive-dk); border-color: var(--cream); }
+.btn svg { width: 18px; height: 18px; flex: none; }
+.actions .btn:only-child, .actions .btn.wide { grid-column: 1 / -1; }
+.f-info { list-style: none; margin: 26px 0 0; padding: 0; display: grid; gap: 8px; font-size: 15px; line-height: 1.4; }
+.f-info a { text-decoration: none; }
+.notes { margin: 24px 0 0; padding-top: 20px; border-top: 1px solid rgba(246,241,228,.2); font-size: 13.5px; line-height: 1.5; opacity: .85; }
+.notes p { margin: 0 0 8px; }
+.copy { margin-top: 18px; font-size: 12.5px; opacity: .6; }
+
+@media (min-width: 720px) {
+  .tab { font-size: 17px; }
+  main { padding: 16px 24px 64px; }
+  .sec-head { padding: 22px 24px 20px 28px; }
+  .i-name { font-size: 18px; }
+}
+@media (max-width: 359px) {
+  .tab { font-size: 14px; letter-spacing: .02em; }
+  .pm-media { min-width: 76px; }
+  .pm-media .v { font-size: 21px; }
+}
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } .mbtn::after { animation: none; opacity: .5; } }
+@media print {
+  .tabs, .chips, .topbar, .actions, .sheet { display: none !important; }
+  body, .hero, footer { background: #fff !important; color: #000; }
+}
+</style>
+</head>
+<body>
+<header class="hero" id="top">
+  <div class="topbar">
+    <label class="lang">
+      <span class="sr" id="lang-label">Idioma</span>
+      <select id="langs" aria-labelledby="lang-label"></select>
+      <svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 4.5l3 3 3-3" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </label>
+  </div>
+  <div class="brand" id="brand">
+    <div class="slot" id="menu-l"></div>
+    <img class="logo" src="img/logo-majao.svg" alt="Majao Barra" width="230" height="122">
+    <div class="slot" id="menu-r"></div>
+  </div>
+  <p class="tagline" id="tagline"></p>
+</header>
+
+<nav class="tabs" id="tabs" aria-label="Carta"><div class="tabs-in" id="tabs-in"></div></nav>
+<nav class="chips" id="chips" aria-label="Secciones"><div class="chips-in" id="chips-in"></div></nav>
+
+<div class="paper"><main id="carta" tabindex="-1"></main></div>
+
+<footer>
+  <div class="f-in">
+    <img class="logo" src="img/logo-majao.svg" alt="Majao Barra" width="150" height="80" loading="lazy">
+    <div class="actions" id="actions"></div>
+    <ul class="f-info" id="f-info"></ul>
+    <div class="notes" id="notes"></div>
+    <div class="copy">© Majao Barra · Alicante</div>
+  </div>
+</footer>
+
+<div class="sheet" id="sheet" hidden>
+  <div class="sheet-panel" role="dialog" aria-modal="true" aria-labelledby="m-title">
+    <button type="button" class="sheet-close" id="sheet-close" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg>
+    </button>
+    <div class="sheet-scroll" id="sheet-scroll"></div>
+  </div>
+</div>
+
+<script src="carta.js"></script>
+<script>
+(function () {
+  'use strict';
+  var C = window.CARTA;
+  var LANGS = ['es', 'en', 'fr', 'de'];
+
+  var UI = {
+    tagline: { es: 'Cocina ininterrumpida, producto honesto y ese punto canalla que te mereces.', en: 'Non-stop kitchen, honest produce and that cheeky touch you deserve.', fr: 'Cuisine en continu, produits honnêtes et cette petite touche canaille que vous méritez.', de: 'Durchgehend warme Küche, ehrliche Produkte und dieser freche Touch, den Sie verdienen.' },
+    media: { es: 'Media', en: 'Half', fr: 'Demi-portion', de: 'Halbe' },
+    racion: { es: 'Ración', en: 'Full', fr: 'Portion', de: 'Ganze' },
+    precio: { es: 'Precio', en: 'Price', fr: 'Prix', de: 'Preis' },
+    unidad: { es: 'Unidad', en: 'Each', fr: 'La pièce', de: 'Stück' },
+    ud: { es: '/ud', en: '/pc', fr: '/pièce', de: '/Stück' },
+    guarnicion: { es: 'Con guarnición a elegir', en: 'With a side of your choice', fr: 'Accompagnement au choix', de: 'Mit Beilage nach Wahl' },
+    compartir: { es: 'Para compartir', en: 'To share', fr: 'À partager', de: 'Zum Teilen' },
+    sup: { es: 'Suplementos', en: 'Add-ons', fr: 'Suppléments', de: 'Extras' },
+    llegar: { es: 'Cómo llegar', en: 'Directions', fr: 'Itinéraire', de: 'Route' },
+    llamar: { es: 'Llamar', en: 'Call', fr: 'Appeler', de: 'Anrufen' },
+    resena: { es: 'Déjanos tu reseña', en: 'Leave us a review', fr: 'Laissez-nous un avis', de: 'Bewerten Sie uns' },
+    iva: { es: 'Precios con IVA incluido.', en: 'Prices include VAT.', fr: 'Prix TTC.', de: 'Alle Preise inkl. MwSt.' },
+    alergenos: { es: '¿Alergias o intolerancias? Pregunta a nuestro equipo y te informaremos de los alérgenos de cada plato.', en: 'Allergies or intolerances? Ask our team and we will tell you the allergens in each dish.', fr: 'Allergies ou intolérances ? Demandez à notre équipe, elle vous indiquera les allergènes de chaque plat.', de: 'Allergien oder Unverträglichkeiten? Unser Team informiert Sie gern über die Allergene jedes Gerichts.' },
+    idioma: { es: 'Idioma', en: 'Language', fr: 'Langue', de: 'Sprache' },
+    carta: { es: 'Carta', en: 'Menu', fr: 'Carte', de: 'Speisekarte' },
+    secciones: { es: 'Secciones', en: 'Sections', fr: 'Sections', de: 'Bereiche' },
+    cerrar: { es: 'Cerrar', en: 'Close', fr: 'Fermer', de: 'Schließen' },
+    o: { es: 'o', en: 'or', fr: 'ou', de: 'oder' },
+    verCarta: { es: 'Ver la carta', en: 'See the full menu', fr: 'Voir la carte', de: 'Zur Speisekarte' }
+  };
+  var FORMATOS = {
+    copa: { es: 'Copa', en: 'Glass', fr: 'Verre', de: 'Glas' },
+    botella: { es: 'Botella', en: 'Bottle', fr: 'Bouteille', de: 'Flasche' },
+    magnum: { es: 'Mágnum', en: 'Magnum', fr: 'Magnum', de: 'Magnum' },
+    pequeno: { es: 'Pequeño', en: 'Small', fr: 'Petit', de: 'Klein' },
+    chupito: { es: 'Chupito', en: 'Shot', fr: 'Shot', de: 'Shot' },
+    cana: { es: 'Caña', en: 'Small draught', fr: 'Demi', de: 'Klein vom Fass' },
+    botellin: { es: '33 cl', en: '33 cl', fr: '33 cl', de: '33 cl' },
+    jarra: { es: 'Jarra', en: 'Large draught', fr: 'Chope', de: 'Groß vom Fass' }
+  };
+  var ICON = {
+    pin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
+    phone: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 3h3l2 5-2.5 1.5a11 11 0 0 0 7 7L16 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>',
+    ig: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg>',
+    star: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>',
+    sun: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.2M12 19.3v2.2M2.5 12h2.2M19.3 12h2.2M5.3 5.3l1.6 1.6M17.1 17.1l1.6 1.6M5.3 18.7l1.6-1.6M17.1 6.9l1.6-1.6"/></svg>',
+    moon: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 14.6A8.6 8.6 0 0 1 9.4 3.5a8.6 8.6 0 1 0 11.1 11.1z"/></svg>',
+    clock: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>'
+  };
+
+  var lang = 'es', tabId = C.tabs[0].id;
+  var $ = function (id) { return document.getElementById(id); };
+  var esc = function (s) { return String(s).replace(/[&<>"]/g, function (c) { return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]; }); };
+  var tx = function (v) { if (v == null) return ''; if (typeof v === 'string') return v; return v[lang] != null ? v[lang] : (v.es || ''); };
+  var u = function (k) { return tx(UI[k]); };
+  var num = function (n) { return Number.isInteger(n) ? String(n) : n.toFixed(2).replace('.', ','); };
+  var eur = function (n) { return esc(num(n)) + '<span class="eur">&nbsp;€</span>'; };
+  var two = function (i) { return (i < 9 ? '0' : '') + (i + 1); };
+  var reduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+
+  /* ---------- Render ---------- */
+  function box(label, v) {
+    return '<span class="pm-media"><span class="l">' + esc(label) + '</span><span class="v">' + eur(v) + '</span></span>';
+  }
+  function priceHTML(it) {
+    if (it.media != null) {
+      return '<div class="price pm">' +
+        '<span class="pm-media"><span class="l">' + esc(u('media')) + '</span><span class="v">' + eur(it.media) + '</span></span>' +
+        (it.racion != null ? '<span class="pm-rac"><span class="l">' + esc(u('racion')) + '</span><span class="v">' + esc(num(it.racion)) + '&nbsp;€</span></span>' : '') +
+        '</div>';
+    }
+    if (it.formatos && it.formatos.length === 1) {
+      return '<div class="price pm">' + box(tx(FORMATOS[it.formatos[0].f]) || it.formatos[0].f, it.formatos[0].p) + '</div>';
+    }
+    if (it.formatos) {
+      return '<div class="price pf">' + it.formatos.map(function (f) {
+        return '<span class="l">' + esc(tx(FORMATOS[f.f]) || f.f) + '</span><span class="v">' + eur(f.p) + '</span>';
+      }).join('') + '</div>';
+    }
+    if (it.precio != null) {
+      return '<div class="price pm">' + box(u(it.ud ? 'unidad' : 'precio'), it.precio) + '</div>';
+    }
+    return '<div class="price"></div>';
+  }
+
+  function itemHTML(it) {
+    var name = tx(it.n), desc = tx(it.d), h = '<li class="item"><div class="i-main">';
+    h += '<h3 class="i-name">' + esc(name) + '</h3>';
+    if (desc) h += '<p class="i-desc">' + esc(desc) + '</p>';
+    if (it.sup && it.sup.length) {
+      h += '<div class="sup"><b>' + esc(u('sup')) + '</b><ul>' + it.sup.map(function (s) {
+        return '<li>' + esc(tx(s.n)) + ' <span>+' + esc(num(s.p)) + '&nbsp;€</span></li>';
+      }).join('') + '</ul></div>';
+    }
+    if (it.tags && it.tags.length) {
+      h += '<div class="tags">' + it.tags.map(function (t) {
+        if (t === 'guarnicion') return '<a class="tag" href="#guarniciones" data-jump="guarniciones">' + esc(u('guarnicion')) + '</a>';
+        return '<span class="tag">' + esc(u(t)) + '</span>';
+      }).join('') + '</div>';
+    }
+    h += '</div>' + (it.variantes ? '<div class="price"></div>' : priceHTML(it));
+    if (it.variantes) {
+      h += '<ul class="vars">' + it.variantes.map(function (v) {
+        return '<li><span class="v-n">' + esc(tx(v.n)) + '</span><span class="v-p">' + eur(v.p) + ' <small>' + esc(u('ud')) + '</small></span></li>';
+      }).join('') + '</ul>';
+    }
+    return h + '</li>';
+  }
+
+  function currentTab() { for (var i = 0; i < C.tabs.length; i++) if (C.tabs[i].id === tabId) return C.tabs[i]; return C.tabs[0]; }
+
+  function renderStatic() {
+    document.documentElement.lang = lang;
+    document.title = tx(UI.carta) + ' · Majao Barra';
+    $('tagline').textContent = u('tagline');
+    $('langs').setAttribute('aria-label', u('idioma'));
+    $('tabs').setAttribute('aria-label', u('carta'));
+    $('chips').setAttribute('aria-label', u('secciones'));
+    $('lang-label').textContent = u('idioma');
+    $('langs').innerHTML = LANGS.map(function (l) {
+      return '<option value="' + l + '"' + (l === lang ? ' selected' : '') + ' lang="' + l + '">' + l.toUpperCase() + '</option>';
+    }).join('');
+    var mb = function (m) {
+      return m ? '<button type="button" class="mbtn' + (m.icono === 'luna' ? ' noche' : '') + '" data-menu="' + m.id + '">' + (m.icono === 'luna' ? ICON.moon : ICON.sun) + '<span>' + esc(tx(m.boton)) + '</span></button>' : '';
+    };
+    $('menu-l').innerHTML = mb((C.menus || [])[0]);
+    $('menu-r').innerHTML = mb((C.menus || [])[1]);
+    $('sheet-close').setAttribute('aria-label', u('cerrar'));
+    if (openMenu) renderSheet(openMenu);
+    $('tabs-in').innerHTML = C.tabs.map(function (t) {
+      return '<button type="button" class="tab" data-tab="' + t.id + '"' + (t.id === tabId ? ' aria-current="page"' : '') + '>' + esc(tx(t.t)) + '</button>';
+    }).join('');
+
+    var I = C.info, acts = '';
+    if (I.mapa) acts += '<a class="btn main" href="' + esc(I.mapa) + '" target="_blank" rel="noopener">' + ICON.pin + esc(u('llegar')) + '</a>';
+    if (I.telefono) acts += '<a class="btn" href="tel:' + esc(I.telefono.replace(/\s/g, '')) + '">' + ICON.phone + esc(u('llamar')) + '</a>';
+    if (I.instagram) acts += '<a class="btn' + (I.resenas ? '' : ' wide') + '" href="' + esc(I.instagram) + '" target="_blank" rel="noopener">' + ICON.ig + 'Instagram</a>';
+    if (I.resenas) acts += '<a class="btn" href="' + esc(I.resenas) + '" target="_blank" rel="noopener">' + ICON.star + esc(u('resena')) + '</a>';
+    $('actions').innerHTML = acts;
+    $('f-info').innerHTML =
+      '<li>' + esc(I.direccion) + '</li>' +
+      '<li>' + esc(tx(I.horario)) + '</li>' +
+      '<li><a href="tel:' + esc(I.telefono.replace(/\s/g, '')) + '">' + esc(I.telefono) + '</a></li>';
+    $('notes').innerHTML = '<p>' + esc(u('alergenos')) + '</p><p>' + esc(u('iva')) + '</p>';
+  }
+
+  function renderTab() {
+    var t = currentTab(), html = '', chips = '';
+    t.secciones.forEach(function (s, i) {
+      var note = tx(s.nota);
+      chips += '<button type="button" class="chip" data-sec="' + s.id + '"' + (i === 0 ? ' aria-current="true"' : '') + '>' + esc(tx(s.t)) + '</button>';
+      html += '<section class="sec' + (s.destacada ? ' featured' : '') + '" id="' + s.id + '" aria-labelledby="h-' + s.id + '">' +
+        '<header class="sec-head"><span class="sec-num">' + two(i) + '</span><h2 class="sec-title" id="h-' + s.id + '">' + esc(tx(s.t)) + '</h2>' +
+        (note ? '<p class="sec-note">' + esc(note) + '</p>' : '') + '</header>';
+      if (s.items) html += '<ul class="items">' + s.items.map(itemHTML).join('') + '</ul>';
+      if (s.grupos) s.grupos.forEach(function (g) {
+        html += '<h3 class="group">' + esc(tx(g.r)) + '</h3><ul class="items">' + g.items.map(itemHTML).join('') + '</ul>';
+      });
+      html += '</section>';
+    });
+    $('carta').innerHTML = html || '<p class="empty">—</p>';
+    $('chips-in').innerHTML = chips;
+    $('chips-in').scrollLeft = 0;
+    $('chips').hidden = t.secciones.length < 2;
+    measure();
+    spy();
+  }
+
+  /* ---------- Navegación ---------- */
+  var stick = 110;
+  function measure() {
+    var th = $('tabs').offsetHeight, ch = $('chips').hidden ? 0 : $('chips').offsetHeight;
+    stick = th + ch;
+    document.documentElement.style.setProperty('--stick', stick + 'px');
+  }
+  function heroBottom() { return $('top').offsetHeight; }
+
+  function setTab(id, fromUser) {
+    if (!C.tabs.some(function (t) { return t.id === id; })) id = C.tabs[0].id;
+    tabId = id;
+    [].forEach.call(document.querySelectorAll('.tab'), function (b) {
+      if (b.dataset.tab === id) b.setAttribute('aria-current', 'page'); else b.removeAttribute('aria-current');
+    });
+    renderTab();
+    if (fromUser) {
+      try { history.replaceState(null, '', '#' + id); } catch (e) {}
+      if (window.scrollY > heroBottom()) window.scrollTo({ top: heroBottom(), behavior: 'auto' });
+    }
+  }
+
+  var lock = 0;
+  function setChip(id, scrollChip) {
+    var chips = document.querySelectorAll('.chip'), el = null;
+    [].forEach.call(chips, function (c) {
+      if (c.dataset.sec === id) { c.setAttribute('aria-current', 'true'); el = c; } else c.removeAttribute('aria-current');
+    });
+    if (el && scrollChip) {
+      var box = $('chips-in'), l = el.offsetLeft, r = l + el.offsetWidth;
+      if (l < box.scrollLeft + 16 || r > box.scrollLeft + box.clientWidth - 28) {
+        box.scrollTo({ left: Math.max(0, l - 16), behavior: reduced ? 'auto' : 'smooth' });
+      }
+    }
+  }
+  function goSection(id) {
+    var s = document.getElementById(id);
+    if (!s) return;
+    var y = s.getBoundingClientRect().top + window.scrollY - stick + 1;
+    lock = Date.now() + 700;
+    setChip(id, true);
+    window.scrollTo({ top: Math.max(0, y), behavior: reduced ? 'auto' : 'smooth' });
+  }
+  function spy() {
+    var secs = document.querySelectorAll('.sec');
+    $('chips').classList.toggle('stuck', window.scrollY > heroBottom());
+    if (!secs.length || Date.now() < lock) return;
+    var cur = secs[0].id, line = stick + 24;
+    [].forEach.call(secs, function (s) { if (s.getBoundingClientRect().top <= line) cur = s.id; });
+    if ((window.innerHeight + window.scrollY) >= document.documentElement.scrollHeight - 4 - document.querySelector('footer').offsetHeight && secs.length) {
+      var last = secs[secs.length - 1];
+      if (last.getBoundingClientRect().top < window.innerHeight) cur = last.id;
+    }
+    setChip(cur, true);
+  }
+
+  /* ---------- Eventos ---------- */
+  $('langs').addEventListener('change', function () {
+    lang = this.value; store('majao-lang', lang);
+    renderStatic(); renderTab();
+  });
+
+  /* ---------- Menús de día y noche ---------- */
+  var openMenu = null, pushed = false, opener = null;
+  function findMenu(id) { return (C.menus || []).filter(function (m) { return m.id === id; })[0]; }
+  function dish(d) {
+    var n = tx(d.n), dd = tx(d.d);
+    return '<span class="m-n">' + esc(n) + '</span>' + (dd ? ' <span class="m-d">' + esc(dd) + '</span>' : '');
+  }
+  function renderSheet(id) {
+    var m = findMenu(id); if (!m) return;
+    var h = '<header class="m-hero' + (m.noche ? ' night' : '') + '">' +
+      '<span class="m-kicker">' + (m.icono === 'luna' ? ICON.moon : ICON.sun) + esc(tx(m.boton) === tx(m.titulo) ? 'Majao Barra' : tx(m.boton)) + '</span>' +
+      (m.lema ? '<p class="m-lema">' + esc(tx(m.lema)) + '</p>' : '') +
+      '<h2 class="m-title" id="m-title">' + esc(tx(m.titulo)) + '</h2>' +
+      '<p class="m-when">' + esc(tx(m.cuando)) + '</p>' +
+      '<div class="m-buy"><span class="m-price"><span class="l">' + esc(u('precio')) + '</span><span class="v">' + eur(m.precio) + '</span></span>' +
+      '<div class="m-chips">' + (m.incluye || []).map(function (c) { return '<span class="m-chip">' + esc(tx(c)) + '</span>'; }).join('') + '</div></div>' +
+      '</header><div class="m-body">';
+    m.cursos.forEach(function (c, i) {
+      var note = tx(c.nota);
+      h += '<section class="sec"><header class="sec-head"><span class="sec-num">' + two(i) + '</span><h3 class="sec-title">' + esc(tx(c.t)) + '</h3>' +
+        (note ? '<p class="sec-note">' + esc(note) + '</p>' : '') + '</header>';
+      if (c.fichas) {
+        h += '<div class="m-fichas">' + c.items.map(function (d) { return '<span>' + esc(tx(d.n)) + '</span>'; }).join('') + '</div>';
+      } else {
+        h += '<ul class="m-list">' + c.items.map(function (d) {
+          if (d.o) return '<li>' + d.o.map(dish).join('<span class="m-or">' + esc(u('o')) + '</span>') + '</li>';
+          return '<li>' + dish(d) + '</li>';
+        }).join('') + '</ul>';
+      }
+      if (c.pie) h += '<p class="m-pie">' + esc(tx(c.pie)) + '</p>';
+      h += '</section>';
+    });
+    h += '</div><div class="m-foot"><div class="m-notes"><p>' + esc(u('alergenos')) + '</p><p>' + esc(u('iva')) + '</p></div>' +
+      '<button type="button" class="m-back" data-close>' + esc(u('verCarta')) + '</button></div>';
+    $('sheet-scroll').innerHTML = h;
+  }
+  function showSheet(id) {
+    if (!findMenu(id)) return;
+    openMenu = id;
+    renderSheet(id);
+    $('sheet').hidden = false;
+    document.documentElement.classList.add('locked');
+    $('sheet-scroll').scrollTop = 0;
+    $('sheet-close').focus({ preventScroll: true });
+  }
+  function hideSheet() {
+    if (!openMenu) return;
+    openMenu = null;
+    $('sheet').hidden = true;
+    document.documentElement.classList.remove('locked');
+    if (opener) { opener.focus({ preventScroll: true }); opener = null; }
+  }
+  function openSheet(id, btn) {
+    opener = btn || null;
+    try { history.pushState({ menu: id }, '', '#' + id); pushed = true; } catch (e) { pushed = false; }
+    showSheet(id);
+  }
+  function closeSheet() {
+    if (pushed) { pushed = false; history.back(); return; }
+    hideSheet();
+    try { history.replaceState(null, '', '#' + tabId); } catch (e) {}
+  }
+  $('brand').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-menu]'); if (b) openSheet(b.dataset.menu, b);
+  });
+  $('sheet-close').addEventListener('click', closeSheet);
+  $('sheet').addEventListener('click', function (e) {
+    if (e.target === this || e.target.closest('[data-close]')) closeSheet();
+  });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && openMenu) closeSheet(); });
+  window.addEventListener('popstate', function () {
+    var h = location.hash.slice(1);
+    if (findMenu(h)) { showSheet(h); } else { pushed = false; hideSheet(); }
+  });
+  $('tabs-in').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-tab]'); if (b) setTab(b.dataset.tab, true);
+  });
+  $('chips-in').addEventListener('click', function (e) {
+    var b = e.target.closest('[data-sec]'); if (b) goSection(b.dataset.sec);
+  });
+  $('carta').addEventListener('click', function (e) {
+    var a = e.target.closest('[data-jump]'); if (!a) return;
+    e.preventDefault(); goSection(a.dataset.jump);
+  });
+  var ticking = false;
+  window.addEventListener('scroll', function () {
+    if (ticking) return; ticking = true;
+    requestAnimationFrame(function () { ticking = false; spy(); });
+  }, { passive: true });
+  window.addEventListener('resize', function () { measure(); spy(); });
+  window.addEventListener('hashchange', function () {
+    var h = location.hash.slice(1);
+    if (findMenu(h)) { if (openMenu !== h) showSheet(h); return; }
+    if (openMenu) hideSheet();
+    if (h && h !== tabId && C.tabs.some(function (t) { return t.id === h; })) setTab(h, false);
+  });
+
+  /* ---------- Inicio ---------- */
+  var q = (location.search.match(/[?&]lang=(es|en|fr|de)/) || [])[1];
+  var saved = store('majao-lang');
+  var nav = (navigator.language || 'es').slice(0, 2).toLowerCase();
+  lang = q || (LANGS.indexOf(saved) > -1 ? saved : (LANGS.indexOf(nav) > -1 ? nav : 'es'));
+  var h0 = location.hash.slice(1);
+  if (C.tabs.some(function (t) { return t.id === h0; })) tabId = h0;
+  renderStatic();
+  renderTab();
+  if (findMenu(h0)) showSheet(h0);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(function () { measure(); spy(); });
+})();
+</script>
+</body>
+</html>
