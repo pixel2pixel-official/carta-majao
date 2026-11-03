@@ -330,7 +330,7 @@ window.CARTA = {
           id: 'spritz',
           t: 'Spritz',
           items: [
-            { n: 'Aperol Spritz', precio: 9 },
+            { n: 'Petroni Spritz', precio: 9 },
             { n: 'Campari Spritz', precio: 9 },
             { n: { es: 'Vermut Spritz', en: 'Vermouth Spritz', fr: 'Spritz au vermouth', de: 'Wermut-Spritz' }, precio: 8 },
             { n: { es: 'Spritz 0,0', en: 'Spritz 0.0 (alcohol-free)', fr: 'Spritz 0,0 (sans alcool)', de: 'Spritz 0,0 (alkoholfrei)' }, precio: 8 }
@@ -342,8 +342,8 @@ window.CARTA = {
           items: [
             { n: 'Ostras Pedrín', d: 'Vicente Gandía', precio: 3.5 },
             { n: 'Algueña', precio: 4 },
-            { n: 'Martini Bianco', precio: 5 },
-            { n: 'Martini Rosso', precio: 5 },
+            { n: 'Petroni Blanco', precio: 5 },
+            { n: 'Petroni Rosso', precio: 5 },
             { n: 'Petroni', precio: 6 },
             { n: 'Martini Riserva Speciale Rubino', precio: 8 },
             { n: 'Campari', formatos: [{ f: 'pequeno', p: 3 }, { f: 'copa', p: 5 }] }
@@ -358,7 +358,7 @@ window.CARTA = {
             { n: 'Beefeater Pink', precio: 9 },
             { n: 'Seagram’s', precio: 9 },
             { n: 'Larios Rosé', precio: 9 },
-            { n: { es: 'Tanqueray 0,0 %', en: 'Tanqueray 0.0% (alcohol-free)', fr: 'Tanqueray 0,0 % (sans alcool)', de: 'Tanqueray 0,0 % (alkoholfrei)' }, precio: 9 },
+            { n: { es: 'Seagram’s 0,0 %', en: 'Seagram’s 0.0% (alcohol-free)', fr: 'Seagram’s 0,0 % (sans alcool)', de: 'Seagram’s 0,0 % (alkoholfrei)' }, precio: 9 },
             { n: 'Gin Mare', precio: 10 },
             { n: 'Hendrick’s', precio: 12 },
             { n: 'Bulldog', precio: 12 },
@@ -392,6 +392,7 @@ window.CARTA = {
           items: [
             { n: 'Ballantine’s', precio: 9 },
             { n: 'Jameson', precio: 10 },
+            { n: 'Ballantine’s 10', precio: 11 },
             { n: 'Johnnie Walker Black Label', precio: 12 },
             { n: 'Chivas Regal 12', precio: 14 },
             { n: 'Glenmorangie The Original 12', precio: 14 },
@@ -428,8 +429,8 @@ window.CARTA = {
             { n: 'Amaretto Disaronno', formatos: [{ f: 'pequeno', p: 3 }, { f: 'copa', p: 5 }] },
             { n: 'Licor 43', formatos: [{ f: 'pequeno', p: 3 }, { f: 'copa', p: 5 }] },
             { n: 'Frangelico', formatos: [{ f: 'pequeno', p: 3 }, { f: 'copa', p: 5 }] },
-            { n: { es: 'Orujo de hierbas', en: 'Herbal orujo', fr: 'Orujo aux herbes', de: 'Kräuter-Orujo' }, formatos: [{ f: 'pequeno', p: 3 }, { f: 'copa', p: 5 }] },
-            { n: { es: 'Aguardiente de orujo', en: 'Orujo brandy', fr: 'Eau-de-vie d’orujo', de: 'Orujo-Tresterbrand' }, formatos: [{ f: 'pequeno', p: 3 }, { f: 'copa', p: 5 }] },
+            { n: { es: 'Ruavieja (Orujo de hierbas)', en: 'Ruavieja (herbal orujo)', fr: 'Ruavieja (orujo aux herbes)', de: 'Ruavieja (Kräuter-Orujo)' }, formatos: [{ f: 'pequeno', p: 3 }, { f: 'copa', p: 5 }] },
+            { n: { es: 'Crema de Orujo Ruavieja', en: 'Ruavieja orujo cream', fr: 'Crème d’orujo Ruavieja', de: 'Ruavieja Orujo-Creme' }, formatos: [{ f: 'pequeno', p: 3 }, { f: 'copa', p: 5 }] },
             { n: 'Ricard', formatos: [{ f: 'pequeno', p: 3 }, { f: 'copa', p: 5 }] },
             { n: 'Jägermeister', formatos: [{ f: 'pequeno', p: 3 }, { f: 'copa', p: 5 }] },
             { n: 'Baileys', formatos: [{ f: 'pequeno', p: 3 }, { f: 'copa', p: 6 }] }
@@ -578,6 +579,7 @@ window.CARTA = {
           id: 'champan',
           t: { es: 'Champán', en: 'Champagne', fr: 'Champagne', de: 'Champagner' },
           items: [
+            { n: 'Mumm', formatos: [{ f: 'botella', p: 65 }] },
             { n: 'Telmont Réserve Brut', d: 'Chardonnay, Pinot Meunier, Pinot Noir', formatos: [{ f: 'botella', p: 70 }] },
             { n: 'Telmont Rosé', d: 'Chardonnay, Pinot Meunier, Pinot Noir', formatos: [{ f: 'botella', p: 85 }] },
             { n: 'Ruinart Blanc de Blancs', d: 'Chardonnay', formatos: [{ f: 'botella', p: 130 }] },
