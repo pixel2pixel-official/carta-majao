@@ -489,7 +489,8 @@ window.CARTA = {
           t: { es: 'Blancos', en: 'White wines', fr: 'Vins blancs', de: 'Weißweine' },
           grupos: [
             { r: 'Alicante', items: [
-              { n: 'La Pitxotxa', d: { es: 'Moscatel de Alejandría', en: 'Muscat of Alexandria', fr: 'Muscat d’Alexandrie', de: 'Muskat von Alexandria' }, formatos: [{ f: 'copa', p: 4 }, { f: 'botella', p: 16 }] }
+              { n: 'La Pitxotxa', d: { es: 'Moscatel de Alejandría', en: 'Muscat of Alexandria', fr: 'Muscat d’Alexandrie', de: 'Muskat von Alexandria' }, formatos: [{ f: 'copa', p: 4 }, { f: 'botella', p: 16 }] },
+              { n: 'Porta Regia', d: 'Chardonnay', formatos: [{ f: 'botella', p: 18 }] }
             ] },
             { r: 'Rueda', items: [
               { n: 'Analivia', d: 'Verdejo', formatos: [{ f: 'copa', p: 4 }, { f: 'botella', p: 16 }] },
@@ -536,6 +537,7 @@ window.CARTA = {
             { r: 'Alicante', items: [
               { n: 'Vinalopó 2022', d: { es: 'Alicante Bouschet · 12 meses en roble', en: 'Alicante Bouschet · 12 months in oak', fr: 'Alicante Bouschet · 12 mois en fût de chêne', de: 'Alicante Bouschet · 12 Monate im Eichenfass' }, formatos: [{ f: 'botella', p: 18 }] },
               { n: 'Vinalopó Crianza 2022', d: 'Monastrell, Cabernet Sauvignon', formatos: [{ f: 'botella', p: 18 }] },
+              { n: 'Porta Regia', d: 'Monastrell', formatos: [{ f: 'botella', p: 18 }] },
               { n: 'Patojo 2023', d: { es: 'Monastrell · 10 meses en barrica', en: 'Monastrell · 10 months in barrel', fr: 'Monastrell · 10 mois en barrique', de: 'Monastrell · 10 Monate im Barrique' }, formatos: [{ f: 'botella', p: 23 }] }
             ] },
             { r: 'Utiel-Requena', items: [
