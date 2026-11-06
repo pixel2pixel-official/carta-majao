@@ -500,7 +500,11 @@ window.CARTA = {
             { r: 'Ribeiro', items: [
               { n: 'A Telleira', d: { es: 'Godello · sobre lías', en: 'Godello · on lees', fr: 'Godello · sur lies', de: 'Godello · auf der Hefe' }, formatos: [{ f: 'copa', p: 4.5 }, { f: 'botella', p: 24 }] }
             ] },
+            { r: 'Bierzo', items: [
+              { n: 'Utreia', d: 'Godello', formatos: [{ f: 'botella', p: 25 }] }
+            ] },
             { r: 'Rías Baixas', items: [
+              { n: 'Pazo Rubianes', d: 'Albariño', formatos: [{ f: 'botella', p: 28 }] },
               { n: 'Pentecostés Varietales', d: 'Albariño, Caíño, Loureira, Treixadura, Godello', formatos: [{ f: 'botella', p: 31 }] }
             ] },
             { r: { es: 'Borgoña', en: 'Burgundy', fr: 'Bourgogne', de: 'Burgund' }, items: [
@@ -538,7 +542,8 @@ window.CARTA = {
               { n: 'Vinalopó 2022', d: { es: 'Alicante Bouschet · 12 meses en roble', en: 'Alicante Bouschet · 12 months in oak', fr: 'Alicante Bouschet · 12 mois en fût de chêne', de: 'Alicante Bouschet · 12 Monate im Eichenfass' }, formatos: [{ f: 'botella', p: 18 }] },
               { n: 'Vinalopó Crianza 2022', d: 'Monastrell, Cabernet Sauvignon', formatos: [{ f: 'botella', p: 18 }] },
               { n: 'Porta Regia', d: 'Monastrell', formatos: [{ f: 'botella', p: 18 }] },
-              { n: 'Patojo 2023', d: { es: 'Monastrell · 10 meses en barrica', en: 'Monastrell · 10 months in barrel', fr: 'Monastrell · 10 mois en barrique', de: 'Monastrell · 10 Monate im Barrique' }, formatos: [{ f: 'botella', p: 23 }] }
+              { n: 'Patojo 2023', d: { es: 'Monastrell · 10 meses en barrica', en: 'Monastrell · 10 months in barrel', fr: 'Monastrell · 10 mois en barrique', de: 'Monastrell · 10 Monate im Barrique' }, formatos: [{ f: 'botella', p: 23 }] },
+              { n: 'El Sequé', d: 'Monastrell', formatos: [{ f: 'botella', p: 38 }] }
             ] },
             { r: 'Utiel-Requena', items: [
               { n: 'Vicente Gandía Bobal', d: 'Bobal', formatos: [{ f: 'botella', p: 25 }] },
@@ -550,6 +555,7 @@ window.CARTA = {
             ] },
             { r: 'Ribera del Duero', items: [
               { n: 'Lambuena', d: 'Tinta Fina', formatos: [{ f: 'copa', p: 4 }, { f: 'botella', p: 17 }] },
+              { n: 'Senda de los Olivos', formatos: [{ f: 'botella', p: 24 }] },
               { n: 'Malasenda Crianza', d: 'Tinta Fina', formatos: [{ f: 'botella', p: 26 }] },
               { n: 'Teófilo Reyes Crianza', d: 'Tempranillo', formatos: [{ f: 'botella', p: 29 }] },
               { n: 'Pesquera Crianza', d: 'Tempranillo', formatos: [{ f: 'botella', p: 42 }] },
