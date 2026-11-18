@@ -86,31 +86,15 @@ window.CARTA = {
               media: 12.5, racion: 19
             },
             {
-              n: { es: 'Escalivada con coca de aceite', en: 'Escalivada on olive-oil coca bread', fr: 'Escalivada sur coca à l’huile d’olive', de: 'Escalivada auf Olivenöl-Coca' },
-              d: { es: '', en: 'Roasted vegetables on crispy flatbread', fr: 'Légumes rôtis sur pain plat croustillant', de: 'Geröstetes Gemüse auf knusprigem Fladenbrot' },
-              precio: 6,
-              sup: [
-                { n: { es: 'Mojama', en: 'Cured tuna (mojama)', fr: 'Thon séché (mojama)', de: 'Luftgetrockneter Thunfisch (Mojama)' }, p: 2.5 },
-                { n: { es: 'Bonito', en: 'Bonito tuna', fr: 'Bonite', de: 'Bonito' }, p: 2.5 },
-                { n: { es: 'Hueva de atún', en: 'Tuna roe', fr: 'Œufs de thon', de: 'Thunfischrogen' }, p: 3 }
-              ]
-            },
-            {
               n: { es: 'Croquetas caseras', en: 'Homemade croquettes', fr: 'Croquettes maison', de: 'Hausgemachte Kroketten' },
               variantes: [
                 { n: { es: 'Jamón', en: 'Ham', fr: 'Jambon', de: 'Schinken' }, p: 3 },
                 { n: { es: 'Boletus', en: 'Porcini mushroom', fr: 'Cèpes', de: 'Steinpilz' }, p: 3 },
-                { n: { es: 'Chuleta', en: 'Beef chop', fr: 'Côte de bœuf', de: 'Rinderkotelett' }, p: 3 },
                 { n: { es: 'Gamba roja', en: 'Red prawn', fr: 'Crevette rouge', de: 'Rote Garnele' }, p: 3.5 }
               ]
             },
             {
               n: { es: 'Zamburiñas a la plancha', en: 'Grilled queen scallops', fr: 'Pétoncles grillés', de: 'Gegrillte Kammmuscheln' },
-              precio: 3.5, ud: true
-            },
-            {
-              n: { es: 'Pimientos del piquillo rellenos', en: 'Stuffed piquillo peppers', fr: 'Poivrons piquillo farcis', de: 'Gefüllte Piquillo-Paprika' },
-              d: { es: 'Rellenos de blanc i negre', en: 'Filled with blanc i negre sausage', fr: 'Farcis de blanc i negre (saucisse catalane)', de: 'Gefüllt mit Blanc-i-Negre-Wurst' },
               precio: 3.5, ud: true
             },
             {
@@ -158,7 +142,7 @@ window.CARTA = {
               precio: 16
             },
             {
-              n: { es: 'Tomate Raff con capellán, pulpo seco y ventresca', en: 'Raff tomato with capellán, dried octopus and tuna belly', fr: 'Tomate Raff, capellán, poulpe séché et ventrèche de thon', de: 'Raff-Tomate mit Capellán, getrocknetem Oktopus und Thunfischbauch' },
+              n: { es: 'Tomate de temporada con capellán, pulpo seco y ventresca', en: 'Seasonal tomato with capellán, dried octopus and tuna belly', fr: 'Tomate de saison, capellán, poulpe séché et ventrèche de thon', de: 'Saisontomate mit Capellán, getrocknetem Oktopus und Thunfischbauch' },
               d: { es: 'Con cebolleta tierna y tirabeques', en: 'With spring onion and mangetout', fr: 'Cébette et pois gourmands', de: 'Mit Frühlingszwiebel und Zuckerschoten' },
               precio: 18
             }
@@ -270,7 +254,7 @@ window.CARTA = {
             { n: { es: 'Boniato con eneldo, miel y mostaza', en: 'Sweet potato with dill, honey and mustard', fr: 'Patate douce, aneth, miel et moutarde', de: 'Süßkartoffel mit Dill, Honig und Senf' }, precio: 4.5 },
             { n: { es: 'Patatas fritas', en: 'French fries', fr: 'Frites', de: 'Pommes frites' }, precio: 4.5 },
             { n: { es: 'Verduras al wok', en: 'Wok-fried vegetables', fr: 'Légumes sautés au wok', de: 'Wok-Gemüse' }, precio: 4.5 },
-            { n: { es: 'Espinacas con piñones y pasas', en: 'Spinach with pine nuts and raisins', fr: 'Épinards, pignons et raisins secs', de: 'Spinat mit Pinienkernen und Rosinen' }, precio: 4.5 }
+            { n: { es: 'Alcachofa frita', en: 'Fried artichoke', fr: 'Artichaut frit', de: 'Frittierte Artischocke' }, precio: 5 }
           ]
         }
       ]
