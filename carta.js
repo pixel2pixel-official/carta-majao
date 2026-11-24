@@ -51,7 +51,7 @@ window.CARTA = {
             },
             {
               n: 'Gilda',
-              d: { es: 'La clásica: anchoa, piparra y aceituna', en: 'The classic: anchovy, piparra pepper and olive', fr: 'La classique : anchois, piment piparra et olive', de: 'Der Klassiker: Sardelle, Piparra-Pfefferschote und Olive' },
+              d: { es: 'La clásica: boquerón, piparra, aceituna y huevo de codorniz', en: 'The classic: marinated white anchovy, piparra pepper, olive and quail egg', fr: 'La classique : anchois mariné, piment piparra, olive et œuf de caille', de: 'Der Klassiker: marinierte Sardelle, Piparra-Pfefferschote, Olive und Wachtelei' },
               precio: 3
             },
             {
